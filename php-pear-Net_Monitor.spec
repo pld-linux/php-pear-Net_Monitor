@@ -29,7 +29,7 @@ In PEAR status of this package is: %{_status}.
 
 %description -l pl
 Zunifikowany interfejs do sprawdzania dostêpno¶ci us³ug na zdalnych
-serwerach oraz wysy³ania komunikatów poprzez ró¿nego rodzjau media w
+serwerach oraz wysy³ania komunikatów poprzez ró¿nego rodzaju media w
 przypadku braku dostêpno¶ci danej us³ugi.
 
 Ta klasa ma w PEAR status: %{_status}.

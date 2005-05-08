@@ -7,12 +7,12 @@
 Summary:	%{_pearname} - remote service monitor
 Summary(pl):	%{_pearname} - monitoring zdalnych us³ug
 Name:		php-pear-%{_pearname}
-Version:	0.2.2
+Version:	0.2.3
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	9c8a47effeb59fce249b02ee6be740d2
+# Source0-md5:	d8caf1cf2a3a4390bf6123989ddba22b
 URL:		http://pear.php.net/package/Net_Monitor/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -40,7 +40,7 @@ Ta klasa ma w PEAR status: %{_status}.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/{Alert,Service}
 
-cd %{_pearname}-%{version}/%{_class}
+cd %{_pearname}-%{version}
 install %{_subclass}.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}
 install %{_subclass}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}
 install %{_subclass}/Alert/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_class}/%{_subclass}/Alert
@@ -51,6 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/%{_class}/doc/*
+%doc %{_pearname}-%{version}/doc/*
 %{php_pear_dir}/%{_class}/*.php
 %{php_pear_dir}/%{_class}/%{_subclass}

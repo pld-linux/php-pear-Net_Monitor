@@ -7,13 +7,13 @@
 Summary:	%{_pearname} - remote service monitor
 Summary(pl):	%{_pearname} - monitoring zdalnych us³ug
 Name:		php-pear-%{_pearname}
-Version:	0.2.3
-Release:	4
+Version:	0.2.4
+Release:	1
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	d8caf1cf2a3a4390bf6123989ddba22b
+# Source0-md5:	5c629937bf594d5ee9bce146c65f09b9
 URL:		http://pear.php.net/package/Net_Monitor/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11

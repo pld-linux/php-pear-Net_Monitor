@@ -5,7 +5,7 @@
 %define		_pearname	%{_class}_%{_subclass}
 
 Summary:	%{_pearname} - remote service monitor
-Summary(pl):	%{_pearname} - monitoring zdalnych us≥ug
+Summary(pl.UTF-8):   %{_pearname} - monitoring zdalnych us≈Çug
 Name:		php-pear-%{_pearname}
 Version:	0.2.4
 Release:	1
@@ -30,16 +30,16 @@ service becomes unavailable.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Zunifikowany interfejs do sprawdzania dostÍpno∂ci us≥ug na zdalnych
-serwerach oraz wysy≥ania komunikatÛw poprzez rÛønego rodzaju media w
-przypadku braku dostÍpno∂ci danej us≥ugi.
+%description -l pl.UTF-8
+Zunifikowany interfejs do sprawdzania dostƒôpno≈õci us≈Çug na zdalnych
+serwerach oraz wysy≈Çania komunikat√≥w poprzez r√≥≈ºnego rodzaju media w
+przypadku braku dostƒôpno≈õci danej us≈Çugi.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -48,7 +48,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep

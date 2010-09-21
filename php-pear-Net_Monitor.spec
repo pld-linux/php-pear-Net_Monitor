@@ -2,20 +2,19 @@
 %define		_class		Net
 %define		_subclass	Monitor
 %define		_status		beta
-%define		_pearname	%{_class}_%{_subclass}
-
+%define		_pearname	Net_Monitor
 Summary:	%{_pearname} - remote service monitor
 Summary(pl.UTF-8):	%{_pearname} - monitoring zdalnych usług
 Name:		php-pear-%{_pearname}
-Version:	0.2.4
-Release:	3
+Version:	0.2.5
+Release:	1
 Epoch:		0
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	5c629937bf594d5ee9bce146c65f09b9
+# Source0-md5:	6f0db70abcccafcea14ac7921aec57cd
 URL:		http://pear.php.net/package/Net_Monitor/
-BuildRequires:	php-pear-PEAR
+BuildRequires:	php-pear-PEAR >= 1:1.4.0-0.b1
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-pear

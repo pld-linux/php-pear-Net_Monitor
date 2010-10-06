@@ -1,14 +1,11 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		Net
-%define		_subclass	Monitor
 %define		_status		beta
 %define		_pearname	Net_Monitor
 Summary:	%{_pearname} - remote service monitor
 Summary(pl.UTF-8):	%{_pearname} - monitoring zdalnych usług
 Name:		php-pear-%{_pearname}
 Version:	0.2.5
-Release:	1
-Epoch:		0
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -23,13 +20,15 @@ Suggests:	php-pear-HTTP_Request >= 1.2.4
 Suggests:	php-pear-Mail >= 1.0.0
 Suggests:	php-pear-Net_DNS >= 0.0.3
 Suggests:	php-pear-Net_FTP >= 1.3.0-0.RC1
+Suggests:	php-pear-Net_Growl
 Suggests:	php-pear-Net_SMS >= 0.0.1
 Suggests:	php-pear-Net_SMTP >= 1.2.2
+Obsoletes:	php-pear-Net_Monitor-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	pear(HTTP/Request.*) pear(Mail.*) pear(Net/DNS.*) pear(Net/FTP.*) pear(Net/SMS.*) pear(Net/SMTP.*)
+%define		_noautoreq	pear(HTTP/Request.*) pear(Mail.*) pear(Net/DNS.*) pear(Net/FTP.*) pear(Net/SMS.*) pear(Net/SMTP.*) pear(Net/Growl.php)
 
 %description
 A unified interface for checking the availability services on external
@@ -45,20 +44,6 @@ przypadku braku dostępności danej usługi.
 
 Ta klasa ma w PEAR status: %{_status}.
 
-%package tests
-Summary:	Tests for PEAR::%{_pearname}
-Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
-Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoProv:	no
-AutoReq:	no
-
-%description tests
-Tests for PEAR::%{_pearname}.
-
-%description tests -l pl.UTF-8
-Testy dla PEAR::%{_pearname}.
-
 %prep
 %pear_package_setup
 
@@ -66,6 +51,9 @@ Testy dla PEAR::%{_pearname}.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
+
+# tests should not be packaged
+rm -rf $RPM_BUILD_ROOT%{php_pear_dir}/tests/%{_pearname}
 
 %post
 if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
@@ -80,9 +68,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc install.log optional-packages.txt
 %doc docs/%{_pearname}/*
 %{php_pear_dir}/.registry/*.reg
-%{php_pear_dir}/%{_class}/*.php
-%{php_pear_dir}/%{_class}/%{_subclass}
-
-%files tests
-%defattr(644,root,root,755)
-%{php_pear_dir}/tests/*
+%{php_pear_dir}/Net/Monitor.php
+%{php_pear_dir}/Net/Monitor

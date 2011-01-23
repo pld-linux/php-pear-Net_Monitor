@@ -52,9 +52,6 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}
 %pear_package_install
 
-# tests should not be packaged
-rm -rf $RPM_BUILD_ROOT%{php_pear_dir}/tests/%{_pearname}
-
 %post
 if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
 	cat %{_docdir}/%{name}-%{version}/optional-packages.txt

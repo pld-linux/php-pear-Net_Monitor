@@ -1,6 +1,5 @@
 %define		status		beta
 %define		pearname	Net_Monitor
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - remote service monitor
 Summary(pl.UTF-8):	%{pearname} - monitoring zdalnych usług
 Name:		php-pear-%{pearname}

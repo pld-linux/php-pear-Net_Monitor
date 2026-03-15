@@ -4,7 +4,7 @@ Summary:	%{pearname} - remote service monitor
 Summary(pl.UTF-8):	%{pearname} - monitoring zdalnych usług
 Name:		php-pear-%{pearname}
 Version:	0.3.0
-Release:	1
+Release:	2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
